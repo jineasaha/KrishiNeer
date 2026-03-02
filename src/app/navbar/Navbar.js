@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import Logo from "./logo.png";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container">
+        <img className="navbar-brand" src={Logo} alt="Logo" height="65"/>
         <NavLink className="navbar-brand" to="/">
           KrishiNeer
         </NavLink>
