@@ -106,6 +106,12 @@
   font-weight: 600;
 }
 
+.schedule-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
 /* FIELD HEALTH CARD */
 .field-visual-card {
   background: linear-gradient(135deg, #0f766e, #10b981);
@@ -203,6 +209,108 @@
   transform: scale(1.05);
 }
 
+.ai-generate-btn {
+  width: 100%;
+  min-height: 58px;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(120deg, #0f766e 0%, #14b8a6 55%, #10b981 100%);
+  box-shadow:
+    0 12px 24px rgba(16, 185, 129, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.ai-generate-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.55s ease;
+}
+
+.ai-generate-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 16px 30px rgba(16, 185, 129, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  filter: saturate(1.08);
+}
+
+.ai-generate-btn:hover::after {
+  left: 130%;
+}
+
+.ai-generate-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.ai-generate-btn:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow:
+    0 8px 18px rgba(15, 118, 110, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.planner-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f4fbf8 100%);
+  border: 1px solid #d7efe7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.planner-caption {
+  color: #516f80;
+  font-weight: 500;
+}
+
+.water-saved-card {
+  background: linear-gradient(150deg, #0f766e 0%, #14b8a6 90%);
+  color: #ffffff;
+  min-height: 180px;
+  border: none;
+}
+
+.water-saved-card h6 {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.water-saved-percent {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 800;
+  margin: 10px 0 12px;
+  color: #eafff6;
+}
+
+.water-saved-meta {
+  margin: 0;
+  color: rgba(238, 255, 247, 0.92);
+  font-weight: 600;
+}
+
 /* Weekly Plan */
 .schedule-row {
   display: flex;
@@ -263,6 +371,10 @@
   .ai-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .schedule-top-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -289,6 +401,10 @@
   .summary-grid,
   .info-grid,
   .ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-top-grid {
     grid-template-columns: 1fr;
   }
 
